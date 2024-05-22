@@ -1,0 +1,125 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "DF-ADF-APR2024"
+		},
+		"AzureDataLakeStorage1yash2_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'AzureDataLakeStorage1yash2'"
+		},
+		"ls_blob_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob'"
+		},
+		"ls_blob2_connectionString": {
+			"type": "secureString",
+			"metadata": "Secure string for 'connectionString' of 'ls_blob2'"
+		},
+		"AzureDataLakeStorage1yash2_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://yash1store.dfs.core.windows.net/"
+		},
+		"event trigger_properties_typeProperties_scope": {
+			"type": "string",
+			"defaultValue": "/subscriptions/fad9fef8-ef35-41d1-8b12-a6edd6ed1fe6/resourceGroups/YASH-WANTH/providers/Microsoft.Storage/storageAccounts/yash1store"
+		},
+		"tumbling trigger_properties_pipeline_parameters_window_strat_date": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowStartTime"
+		},
+		"tumbling trigger_properties_pipeline_parameters_window_end_date": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowEndTime"
+		},
+		"tumblingtrigger2_properties_pipeline_parameters_window_strat_date": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowStartTime"
+		},
+		"tumblingtrigger2_properties_pipeline_parameters_window_end_date": {
+			"type": "string",
+			"defaultValue": "@trigger().outputs.windowEndTime"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "DF-ADF-APR2024_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"AzureDataLakeStorage1yash2_accountKey": {
+						"value": "[parameters('AzureDataLakeStorage1yash2_accountKey')]"
+					},
+					"ls_blob_connectionString": {
+						"value": "[parameters('ls_blob_connectionString')]"
+					},
+					"ls_blob2_connectionString": {
+						"value": "[parameters('ls_blob2_connectionString')]"
+					},
+					"AzureDataLakeStorage1yash2_properties_typeProperties_url": {
+						"value": "[parameters('AzureDataLakeStorage1yash2_properties_typeProperties_url')]"
+					}
+				}
+			},
+			"dependsOn": []
+		},
+		{
+			"name": "DF-ADF-APR2024_ArmTemplate_1",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2018-02-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_1.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"event trigger_properties_typeProperties_scope": {
+						"value": "[parameters('event trigger_properties_typeProperties_scope')]"
+					},
+					"tumbling trigger_properties_pipeline_parameters_window_strat_date": {
+						"value": "[parameters('tumbling trigger_properties_pipeline_parameters_window_strat_date')]"
+					},
+					"tumbling trigger_properties_pipeline_parameters_window_end_date": {
+						"value": "[parameters('tumbling trigger_properties_pipeline_parameters_window_end_date')]"
+					},
+					"tumblingtrigger2_properties_pipeline_parameters_window_strat_date": {
+						"value": "[parameters('tumblingtrigger2_properties_pipeline_parameters_window_strat_date')]"
+					},
+					"tumblingtrigger2_properties_pipeline_parameters_window_end_date": {
+						"value": "[parameters('tumblingtrigger2_properties_pipeline_parameters_window_end_date')]"
+					}
+				}
+			},
+			"dependsOn": [
+				"[resourceId('Microsoft.Resources/deployments', 'DF-ADF-APR2024_ArmTemplate_0')]"
+			]
+		}
+	]
+}

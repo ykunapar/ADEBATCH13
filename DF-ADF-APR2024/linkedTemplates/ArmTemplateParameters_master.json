@@ -1,0 +1,42 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "DF-ADF-APR2024"
+		},
+		"AzureDataLakeStorage1yash2_accountKey": {
+			"value": ""
+		},
+		"ls_blob_connectionString": {
+			"value": ""
+		},
+		"ls_blob2_connectionString": {
+			"value": ""
+		},
+		"AzureDataLakeStorage1yash2_properties_typeProperties_url": {
+			"value": "https://yash1store.dfs.core.windows.net/"
+		},
+		"event trigger_properties_typeProperties_scope": {
+			"value": "/subscriptions/fad9fef8-ef35-41d1-8b12-a6edd6ed1fe6/resourceGroups/YASH-WANTH/providers/Microsoft.Storage/storageAccounts/yash1store"
+		},
+		"tumbling trigger_properties_pipeline_parameters_window_strat_date": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"tumbling trigger_properties_pipeline_parameters_window_end_date": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"tumblingtrigger2_properties_pipeline_parameters_window_strat_date": {
+			"value": "@trigger().outputs.windowStartTime"
+		},
+		"tumblingtrigger2_properties_pipeline_parameters_window_end_date": {
+			"value": "@trigger().outputs.windowEndTime"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
