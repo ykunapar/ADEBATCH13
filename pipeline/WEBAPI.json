@@ -15,8 +15,8 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"method": "POST",
-					"url": "https://management.azure.com/subscriptions/fad9fef8-ef35-41d1-8b12-a6edd6ed1fe6/resourceGroups/YASHWANTH/providers/Microsoft.DataFactory/factories/DF-ADF-APR2024/pipelines/RESTAPI/createRun?api-version=2018-06-01",
+					"method": "GET",
+					"url": "https://docs.microsoft.com/en-us/rest/api/datafactory/pipelines/create-run",
 					"authentication": {
 						"type": "MSI",
 						"resource": "https://management.azure.com/   "
