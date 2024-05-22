@@ -1,0 +1,25 @@
+{
+	"name": "recursiverun",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "trigger_schedule",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 1,
+				"startTime": "2024-05-14T12:11:00",
+				"endTime": "2024-05-15T12:11:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

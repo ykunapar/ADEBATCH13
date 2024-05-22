@@ -1,0 +1,9 @@
+{
+	"name": "DF-ADF-APR2024",
+	"location": "centralindia",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "0df6e34b-a290-4a3d-b137-387a0977d3b0",
+		"tenantId": "682a309e-0ef2-4786-9d46-caa95613ef9a"
+	}
+}

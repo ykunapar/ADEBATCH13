@@ -1,0 +1,25 @@
+{
+	"name": "event trigger",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Started",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "trigger_schedule",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "BlobEventsTrigger",
+		"typeProperties": {
+			"blobPathBeginsWith": "/test/blobs/input",
+			"blobPathEndsWith": ".CSV",
+			"ignoreEmptyBlobs": true,
+			"scope": "/subscriptions/fad9fef8-ef35-41d1-8b12-a6edd6ed1fe6/resourceGroups/YASH-WANTH/providers/Microsoft.Storage/storageAccounts/yash1store",
+			"events": [
+				"Microsoft.Storage.BlobCreated"
+			]
+		}
+	}
+}

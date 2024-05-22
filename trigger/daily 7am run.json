@@ -1,0 +1,25 @@
+{
+	"name": "daily 7am run",
+	"properties": {
+		"annotations": [],
+		"runtimeState": "Stopped",
+		"pipelines": [
+			{
+				"pipelineReference": {
+					"referenceName": "trigger_schedule",
+					"type": "PipelineReference"
+				}
+			}
+		],
+		"type": "ScheduleTrigger",
+		"typeProperties": {
+			"recurrence": {
+				"frequency": "Minute",
+				"interval": 2,
+				"startTime": "2024-05-14T12:13:00",
+				"endTime": "2024-05-15T12:13:00",
+				"timeZone": "India Standard Time"
+			}
+		}
+	}
+}

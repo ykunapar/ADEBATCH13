@@ -1,0 +1,19 @@
+{
+	"name": "integrationRuntime1IR-PAK",
+	"properties": {
+		"type": "Managed",
+		"description": "for testing purpose",
+		"typeProperties": {
+			"computeProperties": {
+				"location": "Central India",
+				"dataFlowProperties": {
+					"computeType": "General",
+					"coreCount": 8,
+					"timeToLive": 10,
+					"cleanup": false,
+					"customProperties": []
+				}
+			}
+		}
+	}
+}

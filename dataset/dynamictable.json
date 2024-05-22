@@ -1,0 +1,22 @@
+{
+	"name": "dynamictable",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_blob2",
+			"type": "LinkedServiceReference"
+		},
+		"parameters": {
+			"tbl_name": {
+				"type": "string"
+			}
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "cust"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
